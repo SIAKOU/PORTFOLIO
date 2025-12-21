@@ -1,0 +1,244 @@
+@import "@fontsource/fira-code/400.css";
+@import "@fontsource/fira-code/500.css";
+@import "@fontsource/fira-code/600.css";
+@import "@fontsource/fira-code/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cybernetic Dark Theme */
+    --background: 230 60% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 235 55% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 235 55% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 230 60% 4%;
+
+    --secondary: 270 50% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 235 40% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 120 100% 60%;
+    --accent-foreground: 230 60% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 235 40% 18%;
+    --input: 235 40% 18%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --cyber-dark: 230 60% 4%;
+    --cyber-darker: 235 55% 6%;
+    --cyber-blue: 195 100% 50%;
+    --cyber-purple: 270 50% 55%;
+    --cyber-green: 120 100% 60%;
+    --cyber-pink: 330 85% 60%;
+    
+    /* Glassmorphism */
+    --glass-bg: 235 55% 8% / 0.6;
+    --glass-border: 235 40% 25% / 0.5;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(270 50% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(120 100% 60%), hsl(195 100% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(230 60% 4%) 0%, hsl(235 55% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(195 100% 50% / 0.15) 0%, transparent 70%);
+    
+    /* Shadows & Glows */
+    --shadow-neon-blue: 0 0 20px hsl(195 100% 50% / 0.4), 0 0 40px hsl(195 100% 50% / 0.2);
+    --shadow-neon-purple: 0 0 20px hsl(270 50% 55% / 0.4), 0 0 40px hsl(270 50% 55% / 0.2);
+    --shadow-neon-green: 0 0 20px hsl(120 100% 60% / 0.4), 0 0 40px hsl(120 100% 60% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(230 60% 4% / 0.5);
+
+    /* Sidebar */
+    --sidebar-background: 235 55% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 230 60% 4%;
+    --sidebar-accent: 235 40% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 235 40% 18%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  .dark {
+    --background: 230 60% 4%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl;
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(135deg, hsl(195 100% 50% / 0.05) 0%, transparent 50%);
+  }
+
+  /* Neon Glow Effects */
+  .glow-blue {
+    box-shadow: var(--shadow-neon-blue);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-neon-purple);
+  }
+
+  .glow-green {
+    box-shadow: var(--shadow-neon-green);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 10px hsl(195 100% 50% / 0.5), 0 0 20px hsl(195 100% 50% / 0.3);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(270 50% 55% / 0.5), 0 0 20px hsl(270 50% 55% / 0.3);
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 10px hsl(120 100% 60% / 0.5), 0 0 20px hsl(120 100% 60% / 0.3);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-text-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  /* Animated Border */
+  .border-gradient {
+    @apply relative;
+  }
+
+  .border-gradient::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl pointer-events-none;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* Scanline Effect */
+  .scanlines {
+    @apply pointer-events-none fixed inset-0 z-50;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(195 100% 50% / 0.03) 2px,
+      hsl(195 100% 50% / 0.03) 4px
+    );
+  }
+
+  /* Grid Pattern Background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(195 100% 50% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(195 100% 50% / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Circuit Pattern */
+  .circuit-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2300C0FF' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Focus Ring */
+  .focus-cyber:focus {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Typing Cursor Animation */
+  .typing-cursor::after {
+    content: '|';
+    @apply animate-pulse text-primary;
+  }
+
+  /* Progress Bar Glow */
+  .progress-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .progress-glow::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent, hsl(195 100% 50% / 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+@layer utilities {
+  /* Noise Texture Overlay */
+  .noise-overlay {
+    @apply pointer-events-none fixed inset-0 z-40 opacity-[0.02];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Animation Delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+}
