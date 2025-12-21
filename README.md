@@ -40,7 +40,7 @@ Je m'appuie sur des ressources de référence pour rester à jour :
 *   **Outils d'analyse :** Wireshark, Nmap, suite Elastic.
 
 ## 📫 Contact & Liens
-*   **LinkedIn :** [[SIAKOU Stanislas]('https://www.linkedin.com/in/siakou-stanislas-672828297/')]
+*   **LinkedIn :** [[SIAKOU_Stanislas]('https://www.linkedin.com/in/siakou-stanislas-672828297/')]
 *   **GitHub :** [[SIAKOU](https://github.com/SIAKOU/)]
 
 ---
