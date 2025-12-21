@@ -20,9 +20,9 @@ const Footer = () => {
               whileHover={{ scale: 1.02 }}
             >
               <Shield className="w-6 h-6 text-primary" />
-              <span className="font-mono text-sm gradient-text">&lt;CYBER.DEV/&gt;</span>
+              <span className="font-mono text-sm gradient-text">PORTFOLIO SIAKOU</span>
             </motion.div>
-            <p className="text-xs text-muted-foreground text-center md:text-left">
+            <p className="text-xs text-muted-foreground text-center md:text-left italic">
               © {currentYear} SIAKOU Komi Stanislas. Tous droits réservés.
             </p>
           </div>

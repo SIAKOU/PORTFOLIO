@@ -194,11 +194,11 @@ const SkillsSection = () => {
                 >
                   {/* Category Header */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${iconBgColors[category.color as keyof typeof iconBgColors]}`}>
-                                <IconComponent className="w-6 h-6" />
+                      <div className="flex items-center gap-3">
+                      <div className={`p-3 rounded-lg ${iconBgColors[category.color as keyof typeof iconBgColors]}`}>
+                        <IconComponent className="w-6 h-6" />
                       </div>
-                      <h3 className="font-semibold text-lg">{category.title}</h3>
+                      <h3 className="font-semibold text-xl">{category.title}</h3>
                     </div>
                     <motion.div
                       animate={{ rotate: isActive ? 90 : 0 }}
@@ -232,18 +232,18 @@ const SkillsSection = () => {
                   </motion.div>
 
                   {/* Preview Skills (when collapsed) */}
-                  {!isActive && (
+                    {!isActive && (
                     <div className="flex flex-wrap gap-2">
                       {category.skills.slice(0, 3).map((skill) => (
                         <span
                           key={skill.name}
-                          className="text-xs font-mono px-2 py-1 rounded-md bg-muted text-muted-foreground"
+                          className="text-sm font-mono px-3 py-1 rounded-md bg-muted text-muted-foreground"
                         >
                           {skill.name.split('/')[0].trim()}
                         </span>
                       ))}
                       {category.skills.length > 3 && (
-                        <span className="text-xs font-mono px-2 py-1 rounded-md bg-muted text-muted-foreground">
+                        <span className="text-sm font-mono px-3 py-1 rounded-md bg-muted text-muted-foreground">
                           +{category.skills.length - 3}
                         </span>
                       )}

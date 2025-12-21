@@ -96,10 +96,26 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    font-size: 1.125rem; /* 18px base for better readability */
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Global readable and slightly more italic presentation for paragraphs */
+@layer base {
+  html { font-size: 18px; }
+
+  p, li, .lead, .text-muted-foreground, .bio-paragraph {
+    font-style: italic;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
   }
 }
 

@@ -109,19 +109,19 @@ const AboutSection = () => {
 
                 {/* Biography */}
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
-                  <p>
+                  <p className="text-lg italic bio-paragraph">
                     Actuellement étudiant en fin de parcours en Administration Réseaux à
                     l'IAI‑TOGO, je me spécialise dans la sécurité des systèmes et des réseaux.
                     Mon parcours mêle projets académiques, travaux pratiques et stages en
                     administration et sécurisation d'infrastructures.
                   </p>
-                  <p>
+                  <p className="text-lg italic bio-paragraph">
                     Titulaire de la certification CCNA 2, je maîtrise les concepts de routage,
                     commutation, VPN, ainsi que des notions pratiques d'administration système
                     (Linux/Windows) et d'automatisation. Je m'intéresse particulièrement aux
                     technologies Huawei et aux architectures résilientes.
                   </p>
-                  <p>
+                  <p className="text-lg italic bio-paragraph">
                     Mon objectif : transformer mes solides bases théoriques en solutions
                     opérationnelles, participer à des projets d'infrastructure et continuer
                     à me certifier et me spécialiser en cybersécurité.

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import facamLogo from '@/assets/facam logo.png';
 
 const experiences = [
   {
@@ -14,12 +15,13 @@ const experiences = [
   },
   {
     id: 'stage-reseau',
-    role: 'Stage — Administration & Sécurité Réseaux',
-    org: 'Stage (entreprise)',
-    period: '2024 (3 mois)',
+    role: 'Stagiaire — Développement & Administration Réseaux',
+    org: 'FACAM Stairway',
+    period: '1 juil. 2025 — 6 oct. 2025 (3 mois)',
     location: 'Lomé, Togo',
+    logo: facamLogo,
     description:
-      'Mise en place d\'infrastructures réseau, configuration de sécurité, monitoring et backups. Participation à audits de sécurité et hardening de serveurs.',
+      'Développement d\'une plateforme de gestion de maintenance, programmation d\'automates, et développement d\'une plateforme sur-mesure pour un client. Accès et interventions en salle serveur, configuration d\'équipements Forti (Fortinet) et petites opérations de maintenance.',
   },
 ];
 
@@ -62,10 +64,25 @@ const ExperienceSection = () => {
                       {exp.org} • {exp.location}
                     </div>
                   </div>
-                  <div className="text-xs text-muted-foreground font-mono">{exp.period}</div>
+                  <div className="text-xs text-muted-foreground font-mono text-right">
+                    <div>{exp.period}</div>
+                    {exp.logo && (
+                      <img src={exp.logo} alt={`${exp.org} logo`} className="w-20 h-20 object-contain mt-2 ml-4 rounded-md bg-white/5 p-1" />
+                    )}
+                  </div>
                 </div>
 
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{exp.description}</p>
+                <div className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mb-3">{exp.description}</p>
+                  {exp.id === 'stage-reseau' && (
+                    <ul className="list-disc pl-5 space-y-2 text-sm">
+                      <li>Conception et développement d'une plateforme de gestion des maintenances.</li>
+                      <li>Programmation d'automates et intégration avec la plateforme.</li>
+                      <li>Accès et interventions en salle serveur — configuration Forti (Fortinet).</li>
+                      <li>Maintenance corrective et support opérationnel pour l'infrastructure.</li>
+                    </ul>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>

@@ -61,10 +61,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
             <span className="block text-foreground mb-2">SIAKOU Komi Stanislas</span>
-            <span className="block gradient-text text-glow-blue">
+            <span className="block gradient-text text-glow-blue italic">
               Étudiant — Administration Réseaux & Cybersécurité
             </span>
           </motion.h1>
@@ -76,7 +76,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mb-8"
           >
-            <p className="text-lg sm:text-xl text-muted-foreground font-mono">
+            <p className="text-lg sm:text-xl text-muted-foreground font-mono italic lead">
               <span className="text-primary">&gt;</span> Administration Réseau{' '}
               <span className="text-secondary">•</span> Développement{' '}
               <span className="text-secondary">•</span> Sécurité des SI
@@ -88,7 +88,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed italic bio-paragraph"
           >
             Étudiant en fin de parcours à IAI‑TOGO, je me spécialise en administration
             réseaux, sécurité des systèmes et administration système. Je suis titulaire

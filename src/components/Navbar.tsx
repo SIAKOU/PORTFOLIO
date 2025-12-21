@@ -80,7 +80,7 @@ const Navbar = () => {
               />
             </div>
             <span className="font-mono text-lg font-bold gradient-text hidden sm:block">
-              &lt;CYBER.DEV/&gt;
+              PORTFOLIO SIAKOU
             </span>
           </motion.a>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`relative px-4 py-2 font-mono text-sm transition-colors ${
+                className={`relative px-4 py-2 font-mono text-base transition-colors ${
                   activeSection === item.href.replace('#', '')
                     ? 'text-primary'
                     : 'text-muted-foreground hover:text-foreground'
