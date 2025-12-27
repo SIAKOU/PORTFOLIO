@@ -22,8 +22,6 @@ import {
   Database,
   Key,
   Fingerprint,
-  Satellite,
-  Wifi,
   Cctv,
   Target,
   ArrowRight,
@@ -60,7 +58,7 @@ const HeroSection = () => {
   const [activeParticles, setActiveParticles] = useState<
     Array<{ id: number; x: number; y: number; size: number }>
   >([]);
-  const [time, setTime] = useState("");
+  
   const controls = useAnimation();
   const textControls = useAnimation();
 
@@ -114,19 +112,7 @@ const HeroSection = () => {
     setActiveParticles(particles);
   }, []);
 
-  // Update time
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })
-      );
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  
 
   // Floating icons with more variety
   const floatingIcons = [
@@ -143,8 +129,8 @@ const HeroSection = () => {
   // Stats with more details
   const stats = [
     {
-      value: "2+",
-      label: "Années d'Expérience",
+      value: "3+",
+      label: "Mois d'Expérience",
       icon: Calendar,
       color: "from-blue-500 to-cyan-500",
     },
@@ -360,30 +346,7 @@ const HeroSection = () => {
         </motion.div>
       ))}
 
-      {/* Terminal Status */}
-      <div className="absolute top-8 left-8 z-50">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex items-center gap-3 px-4 py-2 rounded-2xl glass-card border border-primary/20"
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-            <span className="font-mono text-sm text-green-500">online</span>
-          </div>
-          <div className="h-4 w-px bg-white/20" />
-          <div className="font-mono text-sm text-muted-foreground">
-            <Satellite className="inline w-3 h-3 mr-1" />
-            {time}
-          </div>
-          <div className="h-4 w-px bg-white/20" />
-          <div className="font-mono text-sm text-blue-500">
-            <Wifi className="inline w-3 h-3 mr-1" />
-            1.2 Gbps
-          </div>
-        </motion.div>
-      </div>
+      {/* Terminal Status removed */}
 
       {/* Main Content */}
       <motion.div
@@ -398,22 +361,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, type: "spring" }}
             className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl glass-card border border-primary/30 mb-12"
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Cpu className="w-5 h-5 text-primary" />
-            </motion.div>
-            <div className="font-mono text-sm">
-              <span className="text-primary">$ </span>
-              <span className="text-muted-foreground">system_status </span>
-              <span className="text-green-500">--active</span>
-            </div>
-            <motion.div
-              className="w-2 h-2 rounded-full bg-green-500"
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
+            {/* Terminal tag removed */}
           </motion.div>
 
           {/* Animated Name & Title */}

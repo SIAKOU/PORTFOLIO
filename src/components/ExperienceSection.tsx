@@ -109,7 +109,7 @@ const experiences = [
     role: "Développeur Full-Stack Freelance",
     org: "Projets Personnels & Collaborations",
     period: "2022 - Présent",
-    duration: "3+ années",
+    duration: "3+ Mois",
     location: "Remote & Lomé",
     type: "freelance",
     icon: Code,

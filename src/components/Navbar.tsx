@@ -170,7 +170,7 @@ const Navbar = () => {
                   SIAKOU
                 </motion.span>
                 <span className="text-xs text-muted-foreground font-mono">
-                  Développeur Full-Stack
+                  Ingenieur informatique
                 </span>
               </div>
             </motion.div>

@@ -50,9 +50,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'hover:text-gray-300' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-400' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-sky-400' },
+    { icon: Github, href: 'https://github.com/SIAKOU', label: 'GitHub', color: 'hover:text-gray-300' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/siakou-stanislas-672828297/', label: 'LinkedIn', color: 'hover:text-blue-400' },
+    { icon: Twitter, href: 'https://x.com/SIAKOU_stan', label: 'Twitter', color: 'hover:text-sky-400' },
     { icon: Mail, href: 'mailto:SIAKOU2006@gmail.com', label: 'Email', color: 'hover:text-red-400' },
   ];
 

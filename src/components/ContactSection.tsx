@@ -30,6 +30,7 @@ import {
   Satellite,
   Rocket,
   Cloud,
+  MessageCircle,
   Server
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -249,8 +250,8 @@ const ContactSection = () => {
     },
     {
       name: 'Téléphone',
-      icon: Phone,
-      href: 'tel:+22892104781',
+      icon:   MessageCircle,
+      href: 'https://wa.me/22892104781',
       label: '+228 92 10 47 81',
       color: 'from-green-500 to-emerald-500',
       gradient: 'bg-gradient-to-r from-green-500/20 to-emerald-500/20',

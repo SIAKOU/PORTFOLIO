@@ -130,7 +130,7 @@ const AboutSection = () => {
       color: "bg-gradient-to-r from-primary to-secondary",
     },
     {
-      year: "2023",
+      year: "2025",
       title: "Certification CCNA 2",
       institution: "Cisco Networking Academy",
       icon: Award,
@@ -309,10 +309,10 @@ const AboutSection = () => {
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="text-center md:text-left">
                           <div className="text-2xl font-bold gradient-text">
-                            2+
+                            3+
                           </div>
                           <div className="text-sm text-muted-foreground">
-                            Années d'expérience
+                            Mois d'expérience
                           </div>
                         </div>
                         <div className="text-center md:text-left">
