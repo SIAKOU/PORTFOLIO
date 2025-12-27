@@ -161,7 +161,7 @@ const ParticleBackground = () => {
         transition={{
           duration: 4,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.42, 0, 0.58, 1],
         }}
       />
     </>

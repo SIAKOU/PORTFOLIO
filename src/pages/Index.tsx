@@ -1,44 +1,30 @@
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import SkillsSection from '@/components/SkillsSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import CertificationsSection from '@/components/CertificationsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-import ParticleBackground from '@/components/ParticleBackground';
+import { Helmet } from "react-helmet-async";
+import AboutSection from "@/components/AboutSection";
+import CertificationsSection from "@/components/CertificationsSection";
+import ContactSection from "@/components/ContactSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-background overflow-hidden">
-      {/* Particle Background */}
-      <ParticleBackground />
-      
-      {/* Scanlines Effect */}
-      <div className="scanlines" />
-      
-      {/* Noise Overlay */}
-      <div className="noise-overlay" />
-      
-      {/* Navigation */}
-      <Navbar />
-      
-      {/* Main Content */}
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <CertificationsSection />
-        <ContactSection />
-      </main>
-      
-      {/* Footer */}
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>SIAKOU Komi Stanislas - Développeur Full-Stack & Expert en Cybersécurité</title>
+        <meta
+          name="description"
+          content="Portfolio de SIAKOU Komi Stanislas, un développeur Full-Stack passionné par la cybersécurité, le développement web et l'administration réseau. Découvrez mes projets, compétences et expériences."
+        />
+      </Helmet>
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <CertificationsSection />
+      <ContactSection />
+    </>
   );
 };
-
 export default Index;

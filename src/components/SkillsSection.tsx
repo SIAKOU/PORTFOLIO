@@ -124,7 +124,7 @@ const SkillBar = ({ skill, index, isInView, categoryColor }: {
           className={`h-full rounded-full bg-gradient-to-r ${colorClasses[categoryColor as keyof typeof colorClasses]} ${glowClasses[categoryColor as keyof typeof glowClasses]}`}
           initial={{ width: 0 }}
           animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: 'easeOut' }}
+          transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: [0.22, 0.98, 0.3, 1] }}
         />
       </div>
     </div>
