@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
   Shield,
@@ -101,14 +101,12 @@ const Navbar = () => {
               >
                 {theme === "light" ? <Sun className="w-4 h-4" /> : theme === "dark" ? <Moon className="w-4 h-4" /> : <Monitor className="w-4 h-4" />}
               </button>
-              <AnimatePresence>
-                {themeOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    className="absolute right-0 mt-2 p-1.5 rounded-xl bg-background border border-white/10 shadow-xl min-w-[140px]"
-                  >
+              {themeOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute right-0 mt-2 p-1.5 rounded-xl bg-background border border-white/10 shadow-xl min-w-[140px]"
+                >
                     {themes.map((tOption) => {
                       const Icon = tOption.icon;
                       return (
@@ -128,7 +126,6 @@ const Navbar = () => {
                     })}
                   </motion.div>
                 )}
-              </AnimatePresence>
             </div>
 
             <div className="relative">
@@ -140,14 +137,12 @@ const Navbar = () => {
                 <span className="hidden lg:inline">{i18n.language?.toUpperCase()}</span>
                 <ChevronDown className="w-3 h-3 hidden lg:block" />
               </button>
-              <AnimatePresence>
-                {langOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    className="absolute right-0 mt-2 p-1.5 rounded-xl bg-background border border-white/10 shadow-xl min-w-[140px]"
-                  >
+              {langOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute right-0 mt-2 p-1.5 rounded-xl bg-background border border-white/10 shadow-xl min-w-[140px]"
+                >
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
@@ -163,7 +158,6 @@ const Navbar = () => {
                     ))}
                   </motion.div>
                 )}
-              </AnimatePresence>
             </div>
 
             <button
@@ -177,14 +171,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-white/10 bg-background/95 backdrop-blur-xl overflow-hidden"
-          >
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          className="lg:hidden border-t border-white/10 bg-background/95 backdrop-blur-xl overflow-hidden"
+        >
             <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
               {navItems.map((item) => (
                 <button
@@ -229,9 +221,8 @@ const Navbar = () => {
                 ))}
               </div>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </motion.div>
+      )}
     </header>
   );
 };

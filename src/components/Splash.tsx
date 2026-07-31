@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Github,
   Star,
@@ -34,7 +34,6 @@ const Splash = ({ onFinish }: Props) => {
   const { t } = useTranslation();
   const { user, topLanguages, totalStars, totalForks, isLoading } = useGithubData();
   const [progress, setProgress] = useState(0);
-  const [visible, setVisible] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const startTime = useRef(Date.now());
@@ -65,23 +64,19 @@ const Splash = ({ onFinish }: Props) => {
   }, [isExiting, showContent]);
 
   const handleEnter = useCallback(() => {
+    if (isExiting) return;
     setIsExiting(true);
     setProgress(100);
-    setTimeout(() => {
-      setVisible(false);
-      setTimeout(() => onFinish?.(), 400);
-    }, 800);
-  }, [onFinish]);
+    setTimeout(() => onFinish?.(), 250);
+  }, [isExiting, onFinish]);
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background"
-        >
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background"
+    >
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
             <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl" />
@@ -255,11 +250,9 @@ const Splash = ({ onFinish }: Props) => {
               <p className="text-center text-xs text-muted-foreground/50 mt-6">
                 SIAKOU Komi Stanislas — Portfolio
               </p>
-            </motion.div>
-          )}
-        </motion.div>
-      )}
-    </AnimatePresence>
+          </motion.div>
+        )}
+    </motion.div>
   );
 };
 
